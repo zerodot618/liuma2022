@@ -10,4 +10,4 @@
 ## 公众号
 关注公众号“六码”，与你分享 something。
 
-![六码](liuma2022.jpg)
+![六码](./images/liuma2022.jpg)
