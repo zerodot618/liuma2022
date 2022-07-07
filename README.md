@@ -20,6 +20,14 @@
     [Go 并发服务器框架 Zinx 入门](https://github.com/yellowStarts/zinx) 
     (使用 Go 语言从 0 开始动手实现 Zinx 框架，并学习 Golang 语言特性与并发服务器的设计思路)
 
+- 链接
+
+    [Go 语言官方文档](http://golang.org/doc/)
+
+    [Go 入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN)
+
+    [Go web 编程](https://github.com/astaxie/build-web-application-with-golang/blob/master/LICENSE.md)
+
 ## PHP
 - 文集
 
