@@ -19,6 +19,7 @@
     
     [Go 并发服务器框架 Zinx 入门](https://github.com/yellowStarts/zinx) 
     (使用 Go 语言从 0 开始动手实现 Zinx 框架，并学习 Golang 语言特性与并发服务器的设计思路)
+    [词频统计](https://github.com/yellowStarts/wordcount)(统计文件中单词的频次)
 
 - 链接
 
