@@ -24,6 +24,8 @@
     
     [区块链实战 | 基于Golang开发公链项目实战](https://github.com/yellowStarts/go-public-chain)  有视频教程有参考资料
 
+    [gRPC 学习案例](https://github.com/yellowStarts/go-pcbook-micro) 学习 gRPC 的案例与记录
+
 - 链接
 
     [Go 语言官方文档](http://golang.org/doc/)
