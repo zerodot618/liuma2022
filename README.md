@@ -34,7 +34,10 @@
 
     [Go 入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN)
 
-    [Go web 编程](https://github.com/astaxie/build-web-application-with-golang/blob/master/LICENSE.md)
+    [Go Web 编程](https://github.com/astaxie/build-web-application-with-golang/blob/master/LICENSE.md)
+
+    [用 Go 从零建立 BitTorrent 客户端](https://blog.mynameisdhr.com/YongGOCongLingJianLiBitTorrentKeHuDuan/)
+
 
 ## PHP
 - 文集
