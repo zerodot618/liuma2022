@@ -1,5 +1,8 @@
 # 第三篇：使用 Gloang 和 Webassembly 构建一个聊天服务
 
+- 外文地址：https://dev.to/taherfattahi/build-a-chat-service-using-golang-and-webassembly-part-3-1kn3
+- 作者：[Taher Fattahi](https://dev.to/taherfattahi)
+
 Gooood：)现在我们进入了第三篇--我们想谈谈聊天服务架构
 
 聊天服务由两个主要部分组成：

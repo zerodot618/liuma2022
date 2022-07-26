@@ -1,5 +1,8 @@
 # 第二篇：使用 Gloang 和 Webassembly 构建一个聊天服务
 
+- 外文地址：https://dev.to/taherfattahi/build-a-chat-service-using-golang-and-webassembly-part-2-1e4l
+- 作者：[Taher Fattahi](https://dev.to/taherfattahi)
+
 好的，现在我们要用golang编写第一个WebAssembly代码
 
 下图是将达成的源代码结构:

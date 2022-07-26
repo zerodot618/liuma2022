@@ -1,4 +1,8 @@
 # 第一篇：使用 Gloang 和 Webassembly 构建一个聊天服务
+
+- 外文地址：https://dev.to/taherfattahi/build-a-chat-service-using-golang-and-webassembly-part-1-1pee
+- 作者：[Taher Fattahi](https://dev.to/taherfattahi)
+
 ![](./images/part-1-01.png)
 ## Webassembly 是什么?
 简而言之，能在浏览器中编译和运行诸如 java，c#，python等语言的技术就是 `Webassembly`。
