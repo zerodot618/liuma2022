@@ -5,10 +5,12 @@
 
 注意：下面是最近在公众号每日更新的文章，最新的文章会存档在本仓库，以供大家指点、学习。
 
-最新文章：[Go 语言简明教程](./docs/golang/go-language-concise-course.md)
+最新文章：[使用 Gloang 和 Webassembly 构建一个聊天服务](./docs/golang/build-a-chat-service-using-goLang-and-WebAssembly/part-1.md)
 
 ## Golang
 - 文集
+
+    [使用 Gloang 和 Webassembly 构建一个聊天服务](./docs/golang/build-a-chat-service-using-goLang-and-WebAssembly/part-1.md)
 
     [Go 语言简明教程](./docs/golang/go-language-concise-course.md)
 
