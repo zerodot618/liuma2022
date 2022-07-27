@@ -1,0 +1,17 @@
+# 第三篇：应用架构
+
+- 原文地址：https://dev.to/jacobsngoodwin/03-application-architecture-5jk
+- 作者：[Jacob Goodwin](https://dev.to/jacobsngoodwin)
+
+[上一篇](./02-creating-route-handlers-in-gin.md)中我们添加了一些路由到应用中。这些路线是我们从外部世界进入应用程序的入口点。这一次，我们将回顾一下应用程序的各个层！
+
+如果您对文件结构或代码有任何困惑，请转到[Github仓库](https://github.com/JacobSNGoodwin/memrizr)并查看本课的分支！
+
+本篇视频地址：https://youtu.be/GWT7pU20jnQ
+
+## 应用架构
+
+下面描述了该体系结构的摘要。这个架构深受[go_clean_arch](https://github.com/bxcodec/go-clean-arch)的影响。每个方框代表一个应用层。
+
+![](./images/03-01.png)
+
