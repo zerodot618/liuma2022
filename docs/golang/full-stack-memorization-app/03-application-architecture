@@ -15,3 +15,194 @@
 
 ![](./images/03-01.png)
 
+传入的HTTP请求由处理程序层(`handler layer`)进行解析和验证。处理程序层调用服务层(`service layer`)的方法，服务层进而访问使用数据源(持久性、数据存储等)的存储库。每一层都依赖于其右侧层的“具体实现”。
+
+所有这些层都可以“使用”模型，并相互传递在模型层中定义的模型。这些模型包含应用程序的基本数据属性、错误和接口。在某些体系结构中，“领域模型”和“数据模型”之间可能存在区别，这将需要将数据模型转换为领域模型的方法。我发现这对于当前的应用程序来说有些过头，尽管这可能是你的应用程序需要考虑的事情。
+
+## 该架构的好处
+这种架构很适合进行单元测试，尽管这绝不是唯一一种架构结构。每一层都可以定义其右侧每一层必须“实现”的期望。层的任何实际或“具体实现”都必须符合这些期望。我们通过定义接口，在Go和许多其他语言中定义了这些接口。然后，我们可以通过“模拟”来自这些接口的响应来分别测试应用程序层。
+
+例如，我们将创建一个用户服务。服务层处理应用程序的逻辑。我们需要的一个功能是获取用户的信息，比如他们的姓名和电子邮件地址。因此，用户服务希望能够从数据库获取一个用户。这意味着任何与用户服务交互的存储库都应该有获取用户的方法(例如， `FindUserByID` 用于根据用户ID获取用户)。我们将该方法的签名定义为 `UserRepository` 接口的一部分(示例如下)。
+
+然而，就用户服务而言，它并不关心 `FindUserByID` 是如何在存储库层内部实现的。存储库层可以通过多种方式实现这一点，甚至可以使用不同的数据源(例如，MySQL而不是Postgres)。
+
+有些项目可能对每一层的单元测试要求非常严格，而其他项目可能“集成”各种层。例如，处理程序层和服务层可以一起测试，而不是单独测试，甚至组合成一个层。在我看来，绝对应该进行单元测试的最关键的层是服务层。在这个应用程序中，我们不会为数据源创建接口。
+
+现在让我们创建用户模型，并将第一个接口和错误添加到模型层。[下一篇](./04-testing-first-gin-http-handler.md)，我们将实现用于获取用户个人信息的各个层的简化版本。
+
+## 创建 model 包
+让我们添加一个 `model` 文件夹来保存我们的用户模型以及应用程序错误和接口。在这个文件夹中，创建以下文件:
+
+![](./images/03-02.png)
+
+**user.go**
+
+在 `user.go` 的内部，我们添加了一个带有我们的用户模型将拥有的属性的结构。我们导入 `uuid` 库来定义 uuid 类型的用户ID(需要安装 `github.com/Google/uuid`)。
+
+我们还在每个字段的反勾号之间添加结构标签。这些字段提供了Go中的struct字段名与数据库中的字段名以及任何JSON响应中的字段名的映射。注意，密码使用json值“-”。这可以防止在任何JSON响应中返回密码。
+
+```golang
+package model
+
+import (
+	"github.com/google/uuid"
+)
+
+// User 用户模型
+type User struct {
+	UID      uuid.UUID `db:"uid" json:"uid"`
+	Email    string    `db: "email" json:"email"`
+	Password string    `db: "password" json:"-"`
+	Name     string    `db: "name" json:"name"`
+	ImageURL string    `db: "image_url" json:"image_url"`
+	Website  string    `db: "website" json:"website"`
+}
+```
+
+**interfaces.go**
+
+在这个文件中，我们定义了对每一层的接口。现在，我们只添加将在[下一篇](./04-testing-first-gin-http-handler.md)中使用的接口。处理程序将期望访问返回 `User` 或错误的方法。对于存储库层也是如此。虽然在这种情况下，服务层和存储库层的签名是一一对应的，但并不总是这样。例如，一个服务可能需要在一个服务方法中访问多个存储库，或者需要访问其他帮助器或实用程序功能，并应用逻辑来产生其响应。
+```golang
+package model
+
+import (
+	"github.com/google/uuid"
+)
+
+// UserService 用户处理服务
+type UserService interface {
+	Get(uid uuid.UUID) (*User, error)
+}
+
+// UserRepository 用户存储服务
+type UserRepository interface {
+	FindByID(uid uuid.UUID) (*User, error)
+}
+```
+
+**errors.go**
+在这个文件中，我们将做：
+
+1. 创建一个带有JSON结构标签的自定义错误结构，用于从我们的 API 发送带有 `type` 和`Message` 字段的JSON响应。
+2. 定义我们预期返回的所有错误类型(授权(`Authorization`)、错误请求(`BadRequest`)、...、过载(`PayloadTooLarge`))。在文件的底部，你将看到使用自定义消息创建每种错误类型的工厂方法。这些工厂方法可以在不同的应用层中调用。
+3. `Error()` 接收器方法。我们的自定义错误实现 `Golang Error` 接口。
+4. `Status()` 接收器方法，用于以int形式获取错误的HTTP状态。这在处理程序(`handlers`)中发送响应时很有用。
+5. `func Status(err error) int` 函数。这允许我们确定一个错误是否是一个错误类型(即我们现在定义的错误)。如果是，函数返回 `4.` 中的HTTP状态码。如果不是，它返回一个内部服务错误(`500`)状态码。
+```golang
+package model
+
+import (
+	"errors"
+	"fmt"
+	"net/http"
+)
+
+// Type 保存错误的类型字符串和整数代码
+type Type string
+
+// 定义错误类型
+const (
+	Authorization   Type = "AUTHORIZATION"   // Authentication Failures -
+	BadRequest      Type = "BADREQUEST"      // Validation errors / BadInput
+	Conflict        Type = "CONFLICT"        // Already exists (eg, create account with existent email) - 409
+	Internal        Type = "INTERNAL"        // Server (500) and fallback errors
+	NotFound        Type = "NOTFOUND"        // For not finding resource
+	PayloadTooLarge Type = "PAYLOADTOOLARGE" // for uploading tons of JSON, or an image over the limit - 413
+)
+
+// Error 应用程序的自定义错误
+// 这有助于从API端点返回一致的错误类型/消息
+type Error struct {
+	Type    Type   `json:"type"`
+	Message string `json:message`
+}
+
+// Error 实现标准的错误接口，我们可以从这个包返回一个普通的旧的 go _error_ 错误
+func (e Error) Error() string {
+	return e.Message
+}
+
+// Status 错误到状态码的映射
+// 当然，这有些多余，因为我们的错误已经映射了http状态代码
+func (e *Error) Status() int {
+	switch e.Type {
+	case Authorization:
+		return http.StatusUnauthorized
+	case BadRequest:
+		return http.StatusBadRequest
+	case Conflict:
+		return http.StatusConflict
+	case Internal:
+		return http.StatusInternalServerError
+	case NotFound:
+		return http.StatusNotFound
+	case PayloadTooLarge:
+		return http.StatusRequestEntityTooLarge
+	default:
+		return http.StatusInternalServerError
+	}
+}
+
+// Status 检查错误的运行时类型
+// 如果错误是 model.Error ，则返回对应错误 http状态码
+func Status(err error) int {
+	var e *Error
+	if errors.As(err, &e) {
+		return e.Status()
+	}
+	return http.StatusInternalServerError
+}
+
+// Error 工厂函数
+
+// NewAuthorization 创建 401 error
+func NewAuthorization(reason string) *Error {
+	return &Error{
+		Type:    Authorization,
+		Message: reason,
+	}
+}
+
+// NewBadRequest 创建 400 error
+func NewBadRequest(reaseon string) *Error {
+	return &Error{
+		Type:    BadRequest,
+		Message: fmt.Sprintf("Bad request. Reason: %v", reaseon),
+	}
+}
+
+// NewConflict 创建 409 error
+func NewConflict(name string, value string) *Error {
+	return &Error{
+		Type:    Conflict,
+		Message: fmt.Sprintf("resource: %v with value: %v already exists.", name, value),
+	}
+}
+
+// NewInternal 创建 500 error 或者 unknow error
+func NewInternal() *Error {
+	return &Error{
+		Type:    Internal,
+		Message: fmt.Sprintf("Internal server error."),
+	}
+}
+
+// NewNotFound 创建 404 error
+func NewNotFound(name string, value string) *Error {
+	return &Error{
+		Type:    NotFound,
+		Message: fmt.Sprintf("resource: %v with value: %v not found", name, value),
+	}
+}
+
+// NewPayloadTooLarge 创建 403 error
+func NewPayloadTooLarge(maxBodySize int64, contentLength int64) *Error {
+	return &Error{
+		Type:    PayloadTooLarge,
+		Message: fmt.Sprintf("Max payload size of %v exceeded. Actual payload size: %v", maxBodySize, contentLength),
+	}
+}
+```
+
+## 结尾
+现在，我们已经构建了模型层的基础，它将允许我们编写第一个 `handler`、`service` 和`repository` 的实现。[下一篇](./04-testing-first-gin-http-handler.md)
