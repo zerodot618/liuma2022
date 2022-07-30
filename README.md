@@ -32,6 +32,8 @@
 
 - 链接
 
+    [Go Developer Roadmap](https://roadmap.sh/golang)
+
     [Go 语言官方文档](http://golang.org/doc/)
 
     [Go 入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN)
@@ -40,6 +42,7 @@
 
     [用 Go 从零建立 BitTorrent 客户端](https://blog.mynameisdhr.com/YongGOCongLingJianLiBitTorrentKeHuDuan/)
 
+    [Learn Go: The complete course](https://dev.to/karanpratapsingh/learn-go-the-complete-course-plc)
 
 ## PHP
 - 文集
