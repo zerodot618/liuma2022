@@ -32,6 +32,8 @@
 
     [G0-Todo](https://github.com/yellowStarts/go-todo) 基于 fiber web框架演示 restful api
 
+    [基于 Ebiten 使用 go 开发游戏](https://github.com/yellowStarts/go-ebiten-game-example)
+
 - 链接
 
     [Go Developer Roadmap](https://roadmap.sh/golang)
