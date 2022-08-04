@@ -13,13 +13,28 @@
 - [码农网](https://www.codercto.com/)
 - [哪那些免费的砖](https://www.thosefree.com/)
 - [Font Awesome 中文网](http://www.fontawesome.com.cn/)
+- [GitCode](https://gitcode.net/explore)
+- [UI.cn](https://www.ui.cn/)
+- [熊猫搜索](https://xmsoushu.com/)
+- [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
+- [Buzzing.cc](https://www.buzzing.cc/) 用中文浏览国外社交媒体里的热门讨论。 
+- [精品课程&商业源码](https://www.rurucode.com/)
+- [小学生学计算机](https://studio.code.org/courses?lang=zh-CN)
+- [设计模式](https://www.patterns.dev/)
+- [Boot.dev](https://boot.dev/)
+- [devdojo](https://devdojo.com/)
+- [表网](http://www.systables.com/index.html)
 
 ## 站点目录
 - [Golang](./docs/golang/README.md)
 - [PHP](./docs/php/README.md)
+- [SQL](./docs/sql/README.md)
 - [Dokcer](./docs/docker/README.md)
-- [区块链](./docs/blockchain/README.md)
 - [架构](./docs/architect/)
+- [区块链](./docs/blockchain/README.md)
+- [Python](./docs/python/README.md)
+- [硬件](./docs/hardware/README.md)
+- [工具](./docs/tools/README.md)
 
 ## 公众号
 关注公众号“六码”，与你分享 something。
