@@ -7,8 +7,20 @@
 ## 文集
 
 - [使用 Gloang 和 Webassembly 构建一个聊天服务](./build-a-chat-service-using-goLang-and-WebAssembly/part-1.md)
-
 - [Go 语言简明教程](./go-language-concise-course/post.md)
+- [大道至简—GO语言最佳实践](https://cloud.tencent.com/developer/article/1145176)
+- [程序员如何用gRPC谈一场恋爱](https://cloud.tencent.com/developer/article/1445070)
+- [万字长文带你深入浅出 Golang Runtime](https://cloud.tencent.com/developer/article/1548034)
+- [一起 goroutine 泄漏问题的排查](https://cloud.tencent.com/developer/article/1568379)
+- [GoLang：你真的了解 HTTPS 吗？](https://cloud.tencent.com/developer/article/1590748)
+- [Go 为什么这么“快”](https://cloud.tencent.com/developer/article/1591618)
+- [从入门到掉坑：Go 内存池/对象池技术介绍](https://cloud.tencent.com/developer/article/1638446)
+- [Golang 汇编入门知识总结](https://cloud.tencent.com/developer/article/1692904)
+- [Go 如何实现热重启](https://cloud.tencent.com/developer/article/1695142)
+- [Golang 单元测试详尽指引](https://cloud.tencent.com/developer/article/1729564)
+- [巧用 Protobuf 反射来优化代码，拒做 PB Boy](https://cloud.tencent.com/developer/article/1753977)
+- [Go与C的桥梁：CGO入门剖析与实践](https://cloud.tencent.com/developer/article/1786332)
+
 
 ## 实战
 - [Go 并发服务器框架 Zinx 入门](https://github.com/yellowStarts/zinx) 
@@ -19,6 +31,7 @@
 - [Golang+React全栈APP项目实战](https://github.com/yellowStarts/memrizr) Docker、Golang、React全栈开发
 - [G0-Todo](https://github.com/yellowStarts/go-todo) 基于 fiber web框架演示 restful api
 - [基于 Ebiten 使用 go 开发游戏](https://github.com/yellowStarts/go-ebiten-game-example)
+
 
 ## 链接
 
