@@ -26,8 +26,8 @@
 - [表网](http://www.systables.com/index.html)
 
 ## 站点目录
-| 竖 T                               | 横 T                                 |
-|:-----------------------------------|--------------------------------------|
+| 主要学习目录                       | 拓展学习目录                          |
+|------------------------------------|--------------------------------------|
 | [Golang](./docs/golang/README.md)  | [区块链](./docs/blockchain/README.md)|
 | [PHP](./docs/php/README.md)        | [Python](./docs/python/README.md)    |
 | [架构](./docs/architect/)          | [硬件](./docs/hardware/README.md)    |
