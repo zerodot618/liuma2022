@@ -22,6 +22,7 @@
 - [HTTP/3 原理实战](https://cloud.tencent.com/developer/article/1634011)
 - [​TCP 拥塞控制详解](https://cloud.tencent.com/developer/article/1636214)
 - [彻底弄懂TCP协议：从三次握手说起](https://cloud.tencent.com/developer/article/1687824)
+- [Nginx 架构浅析](https://cloud.tencent.com/developer/article/1812708)
 
 
 ## 缓存、队列、Redis
@@ -98,3 +99,5 @@
 - [数据分析利器：XGBoost算法最佳解析](https://cloud.tencent.com/developer/article/1765607)
 - [大型 web 前端架构设计-面向抽象编程入门](https://cloud.tencent.com/developer/article/1769333)
 - [编译原理初学者入门指南](https://cloud.tencent.com/developer/article/1776822)
+- [快速实现一个分布式定时器](https://cloud.tencent.com/developer/article/1807494)
+- [五分钟了解互联网Web技术发展史](https://cloud.tencent.com/developer/article/1808394)
