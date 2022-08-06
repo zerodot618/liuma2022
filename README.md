@@ -7,6 +7,8 @@
 
 最新文章：[使用 Gloang 和 Webassembly 构建一个聊天服务](./docs/golang/build-a-chat-service-using-goLang-and-WebAssembly/part-1.md)
 
+同步仓库：[Github](https://github.com/yellowStarts/liuma2022) &nbsp; [Gitee](https://gitee.com/hgz_0315/liuma2022)
+
 ## 必备站点
 
 - [书栈网](https://www.bookstack.cn/)
