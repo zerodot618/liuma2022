@@ -14,6 +14,7 @@
 - [Codecheef](https://www.codecheef.org/) 大部分是关于 Laravel 快速使用的指南。
 - [PHP 之道（PHP The Right Way 中文版）](https://learnku.com/docs/php-the-right-way/PHP8.0)
 - [PHP 开发者实践](https://ryancao.gitbooks.io/php-developer-prepares/content/)
+- [深入了解PHP：用gdb调试源码](https://cloud.tencent.com/developer/article/1828367)
 
 ## Github
 - [DNMP](https://github.com/shunhua/dnmp) `DNMP`（Docker + Nginx + MySQL + PHP7/5 + Redis）是一款全功能的LNMP一键安装程序。

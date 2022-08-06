@@ -12,6 +12,8 @@
 - [Building Blockchain in Go](https://jeiwan.net/)
 - [基于 JavaScript 的区块链、Solidity、Web3 全栈开发教程](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)
 - [区块链技术沙龙最全回顾：我们需要做怎样的区块链？](https://cloud.tencent.com/developer/article/1352073)
+- [最近大火的「元宇宙」是什么？](https://cloud.tencent.com/developer/article/1875296)
+- [最近大火的 NFT 数字藏品是什么？](https://cloud.tencent.com/developer/article/1929567)
 
 ## 钱包
 - [MEW](https://www.myetherwallet.com/) myetherwallet.com

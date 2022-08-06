@@ -20,7 +20,13 @@
 - [Golang 单元测试详尽指引](https://cloud.tencent.com/developer/article/1729564)
 - [巧用 Protobuf 反射来优化代码，拒做 PB Boy](https://cloud.tencent.com/developer/article/1753977)
 - [Go与C的桥梁：CGO入门剖析与实践](https://cloud.tencent.com/developer/article/1786332)
-
+- [gRPC 基础概念详解](https://cloud.tencent.com/developer/article/1845449)
+- [浅谈 Protobuf 编码](https://cloud.tencent.com/developer/article/1847678)
+- [一套优雅的 Go 错误问题解决方案](https://cloud.tencent.com/developer/article/1885094)
+- [Golang 编程思维和工程实战](https://cloud.tencent.com/developer/article/1904240)
+- [​Golang 并发编程指南](https://cloud.tencent.com/developer/article/1921580)
+- [Go 高性能编程技法](https://cloud.tencent.com/developer/article/1958297)
+- [如何实现 1 小时内完成千万级数据运算](https://cloud.tencent.com/developer/article/2042401)
 
 ## 实战
 - [Go 并发服务器框架 Zinx 入门](https://github.com/yellowStarts/zinx) 
