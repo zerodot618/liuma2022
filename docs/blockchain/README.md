@@ -14,6 +14,8 @@
 - [区块链技术沙龙最全回顾：我们需要做怎样的区块链？](https://cloud.tencent.com/developer/article/1352073)
 - [最近大火的「元宇宙」是什么？](https://cloud.tencent.com/developer/article/1875296)
 - [最近大火的 NFT 数字藏品是什么？](https://cloud.tencent.com/developer/article/1929567)
+- [15天入门Web3，从0到1速成指南](https://mp.weixin.qq.com/s?src=11&timestamp=1659848335&ver=3967&signature=ys*xDL5k7zK9EPbd0ba9h48ubp8*p90TyHdSIN5rpMGCdiRTMe1eQEqgoAlH9ItJZssVBfkSJ-dQ-XqStadP0gwviLGygoBwqU*efLtwzM*u9jqJ3oW60dzTmxJG4i9K&new=1)
+- [李留白](https://hicoldcat.com/)
 
 ## 钱包
 - [MEW](https://www.myetherwallet.com/) myetherwallet.com

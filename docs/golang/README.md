@@ -9,6 +9,7 @@
 - [使用 Gloang 和 Webassembly 构建一个聊天服务](./build-a-chat-service-using-goLang-and-WebAssembly/part-1.md)
 - [Go 语言简明教程](./go-language-concise-course/post.md)
 - [大道至简—GO语言最佳实践](https://cloud.tencent.com/developer/article/1145176)
+- [【Vscode】调试go语言程序的最佳实践](https://cloud.tencent.com/developer/article/2028975)
 - [程序员如何用gRPC谈一场恋爱](https://cloud.tencent.com/developer/article/1445070)
 - [万字长文带你深入浅出 Golang Runtime](https://cloud.tencent.com/developer/article/1548034)
 - [一起 goroutine 泄漏问题的排查](https://cloud.tencent.com/developer/article/1568379)
