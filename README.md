@@ -35,6 +35,7 @@
 | [架构](./docs/architect/)          | [前端](./docs/frontend/README.md)    |
 | [Docker](./docs/docker/README.md)  | [硬件](./docs/hardware/README.md)    |
 | [SQL](./docs/sql/README.md)        | [工具](./docs/tools/README.md)       |
+| [Devops](./docs/devops/README.md)  |        |
 
 ## 公众号
 关注公众号“六码”，与你分享 something。
